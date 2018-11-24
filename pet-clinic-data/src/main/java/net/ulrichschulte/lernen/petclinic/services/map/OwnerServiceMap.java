@@ -3,10 +3,12 @@ package net.ulrichschulte.lernen.petclinic.services.map;
 import net.ulrichschulte.lernen.petclinic.model.Owner;
 import net.ulrichschulte.lernen.petclinic.services.CrudService;
 import net.ulrichschulte.lernen.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import javax.sql.rowset.CachedRowSet;
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
