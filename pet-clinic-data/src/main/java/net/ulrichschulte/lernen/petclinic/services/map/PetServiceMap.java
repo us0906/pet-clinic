@@ -1,7 +1,7 @@
 package net.ulrichschulte.lernen.petclinic.services.map;
 
+import net.ulrichschulte.lernen.petclinic.model.Owner;
 import net.ulrichschulte.lernen.petclinic.model.Pet;
-import net.ulrichschulte.lernen.petclinic.services.CrudService;
 import net.ulrichschulte.lernen.petclinic.services.PetService;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
