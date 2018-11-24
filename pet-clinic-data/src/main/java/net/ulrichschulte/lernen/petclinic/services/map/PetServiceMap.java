@@ -2,10 +2,11 @@ package net.ulrichschulte.lernen.petclinic.services.map;
 
 import net.ulrichschulte.lernen.petclinic.model.Pet;
 import net.ulrichschulte.lernen.petclinic.services.CrudService;
+import net.ulrichschulte.lernen.petclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
     @Override
     public Set<Pet> findAll() {
@@ -30,5 +31,10 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Pet findByLastName(String lastName) {
+        return null;
     }
 }
