@@ -1,7 +1,7 @@
 package net.ulrichschulte.lernen.petclinic.services.map;
 
 import net.ulrichschulte.lernen.petclinic.model.BaseEntity;
-import net.ulrichschulte.lernen.petclinic.model.Owner;
+
 
 import java.util.*;
 
