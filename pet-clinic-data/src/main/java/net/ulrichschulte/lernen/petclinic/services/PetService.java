@@ -3,8 +3,6 @@ package net.ulrichschulte.lernen.petclinic.services;
 import net.ulrichschulte.lernen.petclinic.model.Pet;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
-
 @Service
 public interface PetService extends CrudService<Pet, Long> {
 
