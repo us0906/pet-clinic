@@ -1,8 +1,9 @@
 package net.ulrichschulte.lernen.petclinic.services.map;
 
-import net.ulrichschulte.lernen.petclinic.model.Owner;
+
 import net.ulrichschulte.lernen.petclinic.model.Pet;
 import net.ulrichschulte.lernen.petclinic.services.PetService;
+
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
