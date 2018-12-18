@@ -2,6 +2,8 @@ package net.ulrichschulte.lernen.petclinic.model;
 
 import org.springframework.context.annotation.Bean;
 
+import java.util.Set;
+
 
 public class Vet extends Person {
 
