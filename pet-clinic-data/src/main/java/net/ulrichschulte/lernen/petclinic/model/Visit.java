@@ -1,9 +1,6 @@
 package net.ulrichschulte.lernen.petclinic.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -16,7 +13,8 @@ public class Visit extends BaseEntity {
     @Column (name="description")
     private String description;
 
-    @ManyToOne (name="pet_id")
+    @ManyToOne ()
+    @JoinColumn (name = "pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
