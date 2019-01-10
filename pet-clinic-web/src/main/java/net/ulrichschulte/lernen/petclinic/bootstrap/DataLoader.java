@@ -1,10 +1,7 @@
 package net.ulrichschulte.lernen.petclinic.bootstrap;
 
 import net.ulrichschulte.lernen.petclinic.model.*;
-import net.ulrichschulte.lernen.petclinic.services.OwnerService;
-import net.ulrichschulte.lernen.petclinic.services.PetTypeService;
-import net.ulrichschulte.lernen.petclinic.services.SpecialityService;
-import net.ulrichschulte.lernen.petclinic.services.VetService;
+import net.ulrichschulte.lernen.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -78,6 +77,15 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add (fionasCat);
         ownerService.save(owner2);
         System.out.println ("Saving owner2");
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy cat");
+
+        visitService.save(catVisit);
+        System.out.println("CatVisit");
+
 
         Speciality radiology = new Speciality();
         radiology.setDescription("radiology");
