@@ -1,9 +1,6 @@
 package net.ulrichschulte.lernen.petclinic.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +9,10 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @MappedSuperclass
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class BaseEntity implements Serializable {
 
     @Id

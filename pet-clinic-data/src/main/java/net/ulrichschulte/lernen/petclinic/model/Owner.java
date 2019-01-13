@@ -8,9 +8,9 @@ import java.util.Set;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table (name = "owners")
 public class Owner extends Person {
 
@@ -26,5 +26,9 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-
+    @Builder
+    public Owner(Long id, String firstName, String lastName, String address) {
+        super(id, firstName, lastName);
+        this.address = address;
+    }
 }
